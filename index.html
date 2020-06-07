@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>To-do List</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>To-do List</h1>
-    <form id="myForm">
-        <input id="myField" type="text" autocomplete="off">
-        <button>Add item</button>
-    </form>
-
-    <h3>Need to do</h3>
-    <ul id="myList">
-    </ul>
+    <div class="container">
+        <h1  class="centered">To-do List</h1>
+        <form id="myForm" class="centered">
+            <input id="myField" type="text" autocomplete="off" placeholder=" e.g. hire a self-taught developer">
+            <button class="add-item-button">Add item</button>
+        </form>
+        
+        <h2 class="centered">Need to do</h2>
+        <ul id="myList" class="centered"></ul>
+    </div>
 
     <script src="app.js"></script>
 </body>
