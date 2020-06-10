@@ -1,6 +1,7 @@
 let myForm = document.getElementById("myForm");
 let myField = document.getElementById("myField");
 let myList = document.getElementById("myList")
+let listText = document.getElementById("listText")
 
 myForm.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -12,10 +13,15 @@ function createItem(x) {
         alert("Write something in the field.")
     } else {
         let myHTML = `
-        <div class="item">
-            <li>${x}</li>
-                <button class="delete-button" onclick="deleteItem(this)">delete</button>
-        </div>`
+        <li class="d-flex">
+            <p id="listText">${x}</p>
+            <div>
+                <button class="btn btn--s btn--in-cart mr-s" onclick="itemInCart(this)">In Cart</button>
+                <button class="btn btn--s btn--edit mr-s" onclick="editItem(this)">Edit</button>
+                <button class="btn btn--s btn--delete" onclick="deleteItem(this)">Delete</button>
+            </div>
+        </li>
+        `
 
         myList.insertAdjacentHTML("beforeend", myHTML)
     }
@@ -24,6 +30,15 @@ function createItem(x) {
     myField.focus()
 }
 
+function itemInCart(i) {
+    i.parentElement.parentElement.querySelector("p").classList.toggle("in-cart")
+    i.parentElement.classList.toggle("in-cart-buttons")
+} 
+
 function deleteItem(elementToDelete) {
-    elementToDelete.parentElement.remove()
+    elementToDelete.parentElement.parentElement.remove()
+}
+
+function clearAllItems() {
+    myList.innerHTML = "";
 }

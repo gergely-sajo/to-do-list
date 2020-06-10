@@ -9,14 +9,37 @@
 </head>
 <body>
     <div class="container">
-        <h1  class="centered">To-do List</h1>
-        <form id="myForm" class="centered">
-            <input id="myField" type="text" autocomplete="off" placeholder=" e.g. hire a self-taught developer">
-            <button class="add-item-button">Add item</button>
-        </form>
+        <h1 class="title align-center">Shopping List</h1>
+
+        <div class="form-container">
+            <form class="b-margin-null" id="myForm">
+                <div class="align-center d-flex">
+                    <input class="input-field" id="myField" type="text" autocomplete="off" placeholder=" e.g. tomato">
+                    <button class="btn btn--add-item">Add new item</button>
+                </div>
+            </form>
+        </div>
+
+        <button class="btn btn--delete" onclick="clearAllItems()">Clear All</button>
         
-        <h2 class="centered">Need to do</h2>
-        <ul id="myList" class="centered"></ul>
+        <ul id="myList" class="text-color-light">
+            <li class="d-flex">
+                <p id="listText">${x}</p>
+                <div>
+                    <button class="btn btn--s btn--in-cart mr-s" onclick="itemInCart(this)">In Cart</button>
+                    <button class="btn btn--s btn--edit mr-s" onclick="editItem(this)">Edit</button>
+                    <button class="btn btn--s btn--delete" onclick="deleteItem(this)">Delete</button>
+                </div>
+            </li>
+            <li class="d-flex">
+                <p id="listText">${x}</p>
+                <div>
+                    <button class="btn btn--s btn--in-cart mr-s" onclick="itemInCart(this)">In Cart</button>
+                    <button class="btn btn--s btn--edit mr-s" onclick="editItem(this)">Edit</button>
+                    <button class="btn btn--s btn--delete" onclick="deleteItem(this)">Delete</button>
+                </div>
+            </li>
+        </ul>
     </div>
 
     <script src="app.js"></script>
